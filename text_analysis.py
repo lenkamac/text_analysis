@@ -1,6 +1,6 @@
 TEXT = [
     '''Situated about 10 miles west of Kemmerer, 
-Fossil Butte is a ruggedly impressive 
+Fossil Butte is a ruggedly impressive  
 topographic feature that rises sharply 
 some 1000 feet above Twin Creek Valley 
 to an elevation of more than 7500 feet 
@@ -31,7 +31,7 @@ TEXTS = [TEXT[0], TEXT[1], TEXT[2]]
 divider = '-' * 50
 text_dict = {}
 for i, text in enumerate(TEXTS, 0):
-    text_dict[i] = {"words": len(text.split(" ")),
+    text_dict[i] = {"words": len([t for t in text.split(" ") if t not in " .,"]),
                     "title_case": len([word for word in text.split(" ") if word.istitle()]),
                     "uppercase": len([uppercase for uppercase in text.split(" ") if uppercase.isupper()]),
                     "lowercase": len([lowercase for lowercase in text.split(" ") if lowercase.islower()]),
